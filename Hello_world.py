@@ -1,3 +1,5 @@
-print("Hello World")
-for i in range(1,10):
-    print(i)
+def some_func():
+    print("Hi!")
+
+var = some_func()
+print(var)
