@@ -17,6 +17,7 @@ def change_strategy(number_of_doors,picked_door,deleted_door):
 number_of_doors=int(input("number of doors: "))
 iterations=int(input("iterations: "))
 strategy=(input("strategy (stay/change): "))
+new_door = 0
 correct = 0
 
 #PLAY
