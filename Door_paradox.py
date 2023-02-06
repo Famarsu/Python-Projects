@@ -1,4 +1,6 @@
 import random
+import math
+from statistics import NormalDist
 random.seed()
 
 #DEFINITIONS
@@ -39,4 +41,9 @@ for i in range(1,iterations+1):
         correct += 1
 
 #STATISTICS
-print("The strategy succeds in a " + str(100*correct/iterations) + "% of the cases")
+probability = (correct/iterations)
+standard_error = (math.sqrt((probability)*(1-(probability))/iterations))
+sigmas = (NormalDist().inv_cdf(1-standard_error))
+print("The probability to succeds is " + str(probability))
+print("Standard error is " + str(standard_error))
+print("The result has " + str(sigmas) + " sigmas")
