@@ -14,14 +14,29 @@ class Pawn(Piece):
         
         # For white
         if self.color == "white":
-        
+            
+            # Checking en passant
+            # if self.row == 5 and moves_history[-1] == [Pawn, any column, from row 7 to 5]
+            # self.moves.append([6, moves_history[-1][column])
+
+            # Checking capture
+
             # Checking advance
             # if self.row + 1 < 9 and board.get_occupation(pawn.column, pawn.row + 1) == "empty": 
             self.moves.append([self.column, self.row + 1])
 
+
+        # For black
+        else:
             # Checking en passant
-            # if self.row == 5 and moves_history[-1] == [Pawn, any column, from row 7 to 5]
-            # self.moves.append([6, moves_history[-1][column])
+
+            # Checking capture
+
+            # Checking advance
+            # if self.row - 1 > 0 and board.get_occupation(pawn.column, pawn.row - 1) == "empty": 
+            self.moves.append([self.column, self.row - 1])
+
+
 
         return self.moves
     
