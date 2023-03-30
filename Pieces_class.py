@@ -16,26 +16,39 @@ class Pawn(Piece):
         if self.color == "white":
             
             # Checking en passant
-            # if self.row == 5 and moves_history[-1] == [Pawn, any column, from row 7 to 5]
-            # self.moves.append([6, moves_history[-1][column])
+            # if self.row == 5 and moves_history[-1] == [Pawn, any column, from row 7 to 5]:
+            #   self.moves.append([moves_history[-1][column],6])
 
             # Checking capture
+            # if self.column > 1 and board.get_occupation(self.column - 1, self.row + 1) == "black":
+                self.moves.append([self.column - 1, self.row + 1])
+            # if self.column < 8 and board.get_occupation(self.column + 1, self.row + 1) == "black":
+                self.moves.append([self.column + 1, self.row + 1])
 
             # Checking advance
-            # if self.row + 1 < 9 and board.get_occupation(pawn.column, pawn.row + 1) == "empty": 
-            self.moves.append([self.column, self.row + 1])
+            # if board.get_occupation(self.column, self.row + 1) == "empty": 
+                self.moves.append([self.column, self.row + 1])
+            # if self.row == 2 and board.get_occupation(self.column, self.row + 1) == "empty" and board.get_occupation(self.column, self.row + 2) == "empty": 
+                self.moves.append([self.column, self.row + 2])
 
 
         # For black
         else:
             # Checking en passant
+            # if self.row == 4 and moves_history[-1] == [Pawn, any column, from row 2 to 4]:
+            #   self.moves.append([moves_history[-1][column],3])
 
             # Checking capture
+            # if self.column > 1 and board.get_occupation(self.column - 1, self.row - 1) == "white":
+                self.moves.append([self.column - 1, self.row - 1])
+            # if self.column < 8 and board.get_occupation(self.column + 1, self.row - 1) == "white":
+                self.moves.append([self.column + 1, self.row - 1])
 
-            # Checking advance
-            # if self.row - 1 > 0 and board.get_occupation(pawn.column, pawn.row - 1) == "empty": 
-            self.moves.append([self.column, self.row - 1])
-
+            # Checking advance 1
+            # if board.get_occupation(self.column, self.row - 1) == "empty": 
+                self.moves.append([self.column, self.row - 1])
+            # if self.row == 7 and board.get_occupation(self.column, self.row - 1) == "empty" and board.get_occupation(self.column, self.row - 2) == "empty": 
+                self.moves.append([self.column, self.row - 2])
 
 
         return self.moves
