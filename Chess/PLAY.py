@@ -17,4 +17,3 @@ board = BOARD.set_board(white_pieces,black_pieces,board)
 
 #Print the board
 BOARD.print_board(board)
-print(board)
