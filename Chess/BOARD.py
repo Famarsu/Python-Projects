@@ -1,20 +1,37 @@
 #Set the board
 def set_board(white_pieces,black_pieces,board):
     for i in range(len(white_pieces)):
-        board[white_pieces[i].column][white_pieces[i].row] = white_pieces[i].name
+        board[white_pieces[i].column][white_pieces[i].row] = ["white",white_pieces[i].name]
     for i in range(len(black_pieces)):
-        board[black_pieces[i].column][black_pieces[i].row] = black_pieces[i].name
+        board[black_pieces[i].column][black_pieces[i].row] = ["black",black_pieces[i].name]
     return board
 
 #Print the board
 def print_board(board):
     for row in range(8,0,-1):
+        print(row,end=" ")
         for column in range(1,9):
-            if not board[column][row]:
+            if board[column][row] == ["",""]:
                 if (column + row) % 2 == 0:
-                    print(" ▫ ",end="")
+                    print(" □ ",end="")
                 else:
-                    print(" ▪ ",end="")
-            elif board[column][row] == "pawn":
-                print(" ♙ ",end="")
+                    print(" ■ ",end="")
+            elif board[column][row][0] == "white":
+                if board[column][row][1] == "P" :
+                    print(" ♟︎ ",end="")
+                '''
+                elif board[column][row][1] == "B" :
+                    print(" ♝ ",end="")
+                elif
+                '''
+            else:   
+                if board[column][row][1] == "p" :
+                    print(" ♙ ",end="")
+                '''
+                elif board[column][row][1] == "B" :
+                    print(" ♗ ",end="")
+                elif
+                '''
+
         print("\n")
+    print("   A   B   C   D   E   F   G   H")
