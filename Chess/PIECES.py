@@ -1,11 +1,32 @@
+def start_white_pieces(white_pieces):
+    white_pieces.append(Pawn("white","pawn",1,7))
+    white_pieces.append(Pawn("white","pawn",2,7))
+    white_pieces.append(Pawn("white","pawn",3,7))
+    white_pieces.append(Pawn("white","pawn",4,7))
+    white_pieces.append(Pawn("white","pawn",5,7))
+    white_pieces.append(Pawn("white","pawn",6,7))
+    white_pieces.append(Pawn("white","pawn",7,7))
+    white_pieces.append(Pawn("white","pawn",8,7))
+    return white_pieces
+
+def start_black_pieces(black_pieces):
+    black_pieces.append(Pawn("black","pawn",1,2))
+    black_pieces.append(Pawn("black","pawn",2,2))
+    black_pieces.append(Pawn("black","pawn",3,2))
+    black_pieces.append(Pawn("black","pawn",4,2))
+    black_pieces.append(Pawn("black","pawn",5,2))
+    black_pieces.append(Pawn("black","pawn",6,2))
+    black_pieces.append(Pawn("black","pawn",7,2))
+    black_pieces.append(Pawn("black","pawn",8,2))
+    return black_pieces
+
 class Piece:
 
-    def __init__(self,name, color, column, row):
-        self.name = name
+    def __init__(self, color, name, column, row):
         self.color = color
+        self.name = name
         self.column = column
         self.row = row
-        self.alive = True
 
 class Pawn(Piece):
 
@@ -56,8 +77,8 @@ class Pawn(Piece):
 
 
 
-pawn1 = Pawn("pawn1", "white", 1,2)
-print(pawn1.get_moves())
+# pawn1 = Pawn("pawn1", "white",1 ,2 ,0)
+# print(pawn1.get_moves())
 
 #input("Enter piece", x, "and enter your move", y)
 
