@@ -1,5 +1,3 @@
-import PIECES
-
 #Set the board
 def set_board(white_pieces,black_pieces,board):
     for i in range(len(white_pieces)):
